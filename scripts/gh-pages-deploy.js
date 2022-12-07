@@ -14,8 +14,14 @@ const fs = require("fs");
         await execa("git", ["--work-tree", "dist", "commit", "-m", "gh-pages"]);
         console.log("Pushing to gh-pages...");
         await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
-        await execa("rmdir", ["/s", "dist"]);
+        // await execa("rmdir", ["/s", "dist"]);
+        console.log("Stashing.....");
+        await execa("git", ["stash", "save", "--keep-index", "--include-untracked"]);
+        console.log("Removing stash.....");
+        await execa("git", ["stash", "drop"]);
+        console.log("Changing back to master.....");
         await execa("git", ["checkout", "-f", "master"]);
+        console.log("Deleting local gh-pages branch.....");
         await execa("git", ["branch", "-D", "gh-pages"]);
         console.log("Successfully deployed, check your settings");
     } catch (e) {
