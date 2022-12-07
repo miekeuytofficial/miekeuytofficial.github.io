@@ -3,7 +3,8 @@ const execa = require("execa");
 const fs = require("fs");
 (async () => {
     try {
-        await execa("git", ["checkout", "--orphan", "gh-pages"]);
+        //add  "--orphan" for new
+        await execa("git", ["checkout", "gh-pages"]);
         // eslint-disable-next-line no-console
         console.log("Building started...");
         await execa("npm", ["run", "build"]);
