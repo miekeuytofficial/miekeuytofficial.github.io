@@ -4,8 +4,11 @@ const fs = require("fs");
 (async () => {
     try {
         //add  "--orphan" for new
-        await execa("git", ["checkout", "-B", "gh-pages"]);
+        await execa("git", ["checkout", "--orphan", "gh-pages"]);
         // eslint-disable-next-line no-console
+        console.log("Installing dependencies started...");
+        await execa("npm", ["install"]);
+
         console.log("Building started...");
         await execa("npm", ["run", "build"]);
         // Understand if it's dist or build folder
