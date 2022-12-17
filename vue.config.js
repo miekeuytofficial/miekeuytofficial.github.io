@@ -1,3 +1,4 @@
 module.exports = {
-    publicPath: '/miekeuytofficial.github.io/'
+    publicPath: '/miekeuytofficial.github.io/',
+    assetsDir: 'assets'
 }
