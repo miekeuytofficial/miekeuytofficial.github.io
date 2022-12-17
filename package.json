@@ -10,7 +10,8 @@
     "deploy": "node scripts/gh-pages-deploy.cjs"
   },
   "dependencies": {
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "execa": "latest"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
