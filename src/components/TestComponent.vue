@@ -1,16 +1,14 @@
 <template>
-  <div>
-    Boop
-  </div>
+  <div>Boop</div>
 </template>
 
 <script>
 export default {
-  name: 'Test',
+  name: "TestComponent",
   props: {
-    msg: String
-  }
-}
+    msg: String,
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
